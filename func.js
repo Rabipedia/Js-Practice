@@ -136,3 +136,16 @@ const sumFunc = generatesTwoNum(100, function cb(rand1, rand2){
 })
 // console.log(sumFunc);
 
+// Fubction returning from another function.
+const power = p => {
+    return function(n){
+        let res;
+        for(i = 0; i <= p; i++){
+            res *= n;
+        }
+        return res;
+    }
+}
+
+
+
