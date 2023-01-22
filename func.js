@@ -115,8 +115,24 @@ const operations = [
     }
 ];
 
-operations.forEach((operation) => {
-    const fn = new Function(...operation.params, operation.body);
-    fn(...operation.args);
+// operations.forEach((operation) => {
+ //   const fn = new Function(...operation.params, operation.body);
+ //   fn(...operation.args);
+// })
+
+// Higher Order function.
+// Function as an argument
+
+const generatesTwoNum = (max, cb) => {
+    const random1 = Math.floor(Math.random() * max);
+    const random2 = Math.floor(Math.random() * max);
+    return cb(random1, random2);
+}
+
+const sumFunc = generatesTwoNum(100, function cb(rand1, rand2){
+    const res = rand1 + rand2;
+  //  console.log(rand1, rand2);
+    return res;
 })
+// console.log(sumFunc);
 
